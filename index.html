@@ -7,20 +7,25 @@
     <title>Giphy App</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 <body>
     
-
-    <h1 class="header">Giphy Finder</h1>
-    <div class="button-div"></div>
-    <form id="giphy-form">
-        <label for="giphy-input">Search for Giphy</label>
-        <input type="text" id="giphy-input"><br>
-        <input id="add-giphy" type="submit" value="Add New Button">
-        <input id="clear" type="submit" value="Clear">
-    </form>
-    <div class="giphy-display"></div>
+    <div class="container">
+        <h1 class="header">Giphy Finder</h1>
+        <div class="button-div"></div>
+        <hr>
+        <form id="giphy-form">
+            <label for="giphy-input">Search for Giphy: </label>
+            <input type="text" id="giphy-input">
+            <input id="add-giphy" type="submit" value="Add New Button">
+            <input id="clear" type="submit" value="Clear">
+        </form>
+        <div class="favorites"></div>
+        <hr>
+        <div class="giphy-display"></div>
+    </div>
     <script src="assets/javascript/app.js"></script>
 </body>
 </html>

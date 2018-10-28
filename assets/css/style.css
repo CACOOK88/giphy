@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Ceviche+One|Knewave');
+body {
+    font-size: 22px;
+    font-family: 'Ceviche One', cursive, Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: #333;
+}
+
+button,
+#add-giphy, 
+#clear { 
+    cursor: pointer;
+    font-family: 'Ceviche One', cursive, Arial, Helvetica, sans-serif;
+    color: #eee;
+    font-size: 20px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    color: silver;
+}
+
+.header {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Knewave', cursive, Arial, Helvetica, sans-serif;
+}
+
+button {
+    margin: 5px;
+    padding: 1%;
+    border-radius: 100vh;
+    background-color: #2f4353;
+    background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 90%);
+}
+
+hr {
+    color: silver;
+    background-color: silver;
+    height: 2px;
+    width: 97%;
+    border-radius: 50%;
+}
+
+#giphy-form {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+label {
+    margin: 5px;
+}
+
+#giphy-input {
+    border-radius: 100vh;
+    height: 1.25rem;
+    margin: 5px;
+}
+
+#add-giphy, 
+#clear {
+    margin: 5px;
+    border-radius: 100vh;
+    background-color: #2f4353;
+    background-image: linear-gradient(315deg, #d2ccc4 0%, #2f4353 90%);
+}
+
+.giphy-display {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.giphy-display div {
+    display: inline-block;
+    background: black;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+.giphy-display div img {
+    border-radius: 20px 20px 0 0;
+    display: block;
+}
+
+.giphy-display div p {
+    display: inline;
+    margin-right: 10px;
+}

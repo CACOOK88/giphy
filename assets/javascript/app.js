@@ -1,12 +1,13 @@
 var topics = ['ford mustang', 'chevrolet corvette', 'chevrolet camaro', 'ford super snake', 'chevrolet z06', 'dodge challenger', 'dodge viper', 'audi r8', 'porsche 911', 'audi tt', 'nissan GTR', 'subaru WRX', 'BMW M3', 'BMW M5', 'jaguar f-type', 'acura nsx', 'lexus lc', 'lamborghini huracan', 'aston martin v12 vantage'];
-
+var favorites = [];
 // create buttons
 function buttons() {
     // clear div of buttons
     $('.button-div').empty();
     // loop through array to create buttons 
     for ( var i = 0; i < topics.length; i++ ) {
-        var newButton = $('<button>').text(topics[i]);
+        var text = topics[i].toUpperCase();
+        var newButton = $('<button>').text(text);
         newButton.attr('data-search', topics[i]).addClass('giphy');
         $('.button-div').append(newButton);
     }
@@ -30,14 +31,17 @@ function displayInfo() {
         for ( var i = 0; i < response.data.length; i++ ) {
             var results = response.data;
             var gifDisplay = $('<div>');
+            gifDisplay.addClass('gif-card');
             var upperRating = results[i].rating.toUpperCase();
             var rating = $('<p>').text('Rating: ' + upperRating);
+            var favorite = $('<i class="fas fa-heart no-fav"></i>');
+            favorite.attr('data-fav', 'false').attr('data-id', results[i].id);
             var image = $('<img>').addClass('gif');
             image.attr('src', results[i].images.fixed_width_still.url );
             image.attr('data-still', results[i].images.fixed_width_still.url );
             image.attr('data-animate', results[i].images.fixed_width.url );
             image.attr('data-state', 'still' );
-            gifDisplay.append(image, rating);
+            gifDisplay.append(image, rating, favorite);
             $('.giphy-display').prepend(gifDisplay);
         }
     })
@@ -55,6 +59,11 @@ function animateToggle() {
     }
 }
 
+function addToFavs() {
+    console.log('heart clicked');
+    console.log(this);
+}
+
 // click event on submit button
 $('#add-giphy').on('click', function(e) {
     e.preventDefault();
@@ -69,4 +78,5 @@ $(document).on('click', '.gif', animateToggle);
 $('#clear').on('click', function() {
     $('.giphy-display').empty();
 })
+$('.giphy-display').on('click', '.no-fav', addToFavs);
 buttons();
