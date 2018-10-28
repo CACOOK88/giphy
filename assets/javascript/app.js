@@ -62,20 +62,15 @@ function addToFavs() {
 }
 
 function removeFromFav() {
-    console.log(favorites);
-    console.log($(this).attr('data-id'));
-    console.log('for loop next-----------------------------')
-    
     for ( let i = 0; i < favorites.length ; i++) {
-        console.log(favorites[i])
+ 
         if ($(this).attr('data-id') === favorites[i]) {
             console.log('splice')
             favorites.splice(i, 1)
         }
     }
     displayFavs();
-    console.log('out of for loop-----------------------------')
-    console.log(this);
+
 }
 
 function displayFavs() {
