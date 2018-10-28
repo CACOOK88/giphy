@@ -23,9 +23,12 @@ button,
 
 .header {
     margin-bottom: 20px;
-    text-align: center;
     font-size: 40px;
     font-family: 'Knewave', cursive, Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-size:35px;
 }
 
 button {
@@ -72,19 +75,26 @@ label {
     width: 90%;
 }
 
-.giphy-display div {
+.giphy-display div,
+.favorites div {
     display: inline-block;
     background: black;
     margin: 5px;
     border-radius: 20px;
 }
 
-.giphy-display div img {
+.giphy-display div img,
+.favorites div img {
     border-radius: 20px 20px 0 0;
     display: block;
 }
 
-.giphy-display div p {
+.giphy-display div p,
+.favorites div p {
     display: inline;
     margin-right: 10px;
+}
+
+.fav {
+    color: red;
 }

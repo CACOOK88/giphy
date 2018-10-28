@@ -11,12 +11,10 @@ function buttons() {
         newButton.attr('data-search', topics[i]).addClass('giphy');
         $('.button-div').append(newButton);
     }
-    // add class to add click function
-    // add attribute for identifying in display function
 }
 
 // display information on selected giphy
-function displayInfo() {
+function displayGifs() {
     // grab data name
     var searchName = $(this).attr('data-search');
     // set URL
@@ -27,7 +25,6 @@ function displayInfo() {
         url: queryURL,
         method: 'GET'
     }).then(function(response) {
-        console.log(response);
         for ( var i = 0; i < response.data.length; i++ ) {
             var results = response.data;
             var gifDisplay = $('<div>');
@@ -60,8 +57,58 @@ function animateToggle() {
 }
 
 function addToFavs() {
-    console.log('heart clicked');
+    favorites.push($(this).attr('data-id'));
+    displayFavs();
+}
+
+function removeFromFav() {
+    console.log(favorites);
+    console.log($(this).attr('data-id'));
+    console.log('for loop next-----------------------------')
+    
+    for ( let i = 0; i < favorites.length ; i++) {
+        console.log(favorites[i])
+        if ($(this).attr('data-id') === favorites[i]) {
+            console.log('splice')
+            favorites.splice(i, 1)
+        }
+    }
+    displayFavs();
+    console.log('out of for loop-----------------------------')
     console.log(this);
+}
+
+function displayFavs() {
+    $('.favorites').empty();
+    $('.favorites').append('<hr><h2>Favorites</h2>');
+    for ( var i = 0; i < favorites.length; i++ ) {
+        var favID = favorites[i];
+        var queryURL = "http://api.giphy.com/v1/gifs/" + favID + "?limit=1&api_key=QeY1YZllxF0mUC9JEYs9YbhEWVqaVdVG"
+
+        $.ajax({
+            url: queryURL,
+            method: 'GET'
+        }).then(function(response) {
+            var results = response.data;
+            var favDisplay = $('<div>');
+            favDisplay.addClass('gif-card');
+            var upperRating = results.rating.toUpperCase();
+            var rating = $('<p>').text('Rating: ' + upperRating);
+            var favorite = $('<i class="fas fa-heart fav"></i>');
+            favorite.attr('data-fav', 'true');
+            favorite.attr('data-id', results.id);
+            var image = $('<img>').addClass('gif');
+            image.attr('src', results.images.fixed_width_still.url );
+            image.attr('data-still', results.images.fixed_width_still.url );
+            image.attr('data-animate', results.images.fixed_width.url );
+            image.attr('data-state', 'still' );
+            favDisplay.append(image, rating, favorite);
+            $('.favorites').append(favDisplay);
+        })
+    }
+    if (favorites.length == 0) {
+        $('.favorites').empty();
+    }
 }
 
 // click event on submit button
@@ -72,11 +119,13 @@ $('#add-giphy').on('click', function(e) {
     buttons();
 });
 
-// click event on giphy buttons and run displayInfo function
-$(document).on('click', '.giphy', displayInfo);
+// click event on giphy buttons and run displayGifs function
+$(document).on('click', '.giphy', displayGifs);
 $(document).on('click', '.gif', animateToggle);
 $('#clear').on('click', function() {
     $('.giphy-display').empty();
 })
 $('.giphy-display').on('click', '.no-fav', addToFavs);
+$('.favorites').on('click', '.fav', removeFromFav);
+
 buttons();
