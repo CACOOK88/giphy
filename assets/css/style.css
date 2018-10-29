@@ -6,6 +6,7 @@ body {
     background: #333;
 }
 
+/* CLICKABLE ELEMENTS */
 button,
 #add-giphy, 
 #clear { 
@@ -14,23 +15,23 @@ button,
     color: #eee;
     font-size: 20px;
 }
-
+/* SETTING MAX WIDTH */
 .container {
     margin: 0 auto;
     max-width: 1200px;
     color: silver;
 }
-
+/* TITLE STYLE */
 .header {
     margin-bottom: 20px;
     font-size: 40px;
     font-family: 'Knewave', cursive, Arial, Helvetica, sans-serif;
 }
-
+/* STYLE FOR FAVORITES HEADER (DYNAMICALLY ADDED) */
 h2 {
     font-size:35px;
 }
-
+/* GIPHY BUTTONS */
 button {
     margin: 5px;
     padding: 1%;
@@ -47,21 +48,21 @@ hr {
     border-radius: 50%;
 }
 
+/* ************************************************************* */
+/*                     FORM STYLING                              */
+/* ************************************************************* */
 #giphy-form {
     font-size: 30px;
     margin-bottom: 10px;
 }
-
 label {
     margin: 5px;
 }
-
 #giphy-input {
     border-radius: 100vh;
     height: 1.25rem;
     margin: 5px;
 }
-
 #add-giphy, 
 #clear {
     margin: 5px;
@@ -70,11 +71,17 @@ label {
     background-image: linear-gradient(315deg, #d2ccc4 0%, #2f4353 90%);
 }
 
+
+/* ************************************************************* */
+/*                     GIPHY DISPLAY STYLING                     */
+/* ************************************************************* */
+/* DEFAULT DIV STYLING */
 .giphy-display {
     margin: 0 auto;
     width: 90%;
 }
 
+/* DYNAMICALLY ADDED TO THE SCREEN */
 .giphy-display div,
 .favorites div {
     display: inline-block;
@@ -83,18 +90,21 @@ label {
     border-radius: 20px;
 }
 
+/* DYNAMICALLY ADDED TO THE SCREEN */
 .giphy-display div img,
 .favorites div img {
     border-radius: 20px 20px 0 0;
     display: block;
 }
 
+/* DYNAMICALLY ADDED TO THE SCREEN */
 .giphy-display div p,
 .favorites div p {
     display: inline;
     margin-right: 10px;
 }
 
+/* RED HEART WHEN MOVED TO FAVORITES SECTION */
 .fav {
     color: red;
 }
