@@ -11,19 +11,24 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <!-- CONTAINER TO MANAGE WIDTH -->
     <div class="container">
+        <!-- TITLE HEADER -->
         <h1 class="header">Giphy Finder</h1>
+        <!-- BUTTONS DISPLAY SECTION -->
         <div class="button-div"></div>
         <hr>
+        <!-- FORM FOR USER INPUTS -->
         <form id="giphy-form">
             <label for="giphy-input">Search for Giphy: </label>
             <input type="text" id="giphy-input">
             <input id="add-giphy" type="submit" value="Add New Button">
             <input id="clear" type="button" value="Clear">
         </form>
+        <!-- FAVORITES SECTION -->
         <div class="favorites"></div>
         <hr>
+        <!-- SEARCH DISPLAY SECTION -->
         <div class="giphy-display"></div>
     </div>
     <script src="assets/javascript/app.js"></script>
