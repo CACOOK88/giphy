@@ -33,7 +33,7 @@ function displayGifs() {
     // grab data name
     var searchName = $(this).attr('data-search');
     // set URL
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchName + "&limit=10&api_key=QeY1YZllxF0mUC9JEYs9YbhEWVqaVdVG"
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchName + "&limit=10&api_key=QeY1YZllxF0mUC9JEYs9YbhEWVqaVdVG"
 
     // ajax call
     $.ajax({
@@ -99,7 +99,7 @@ function displayFavs() {
         // set variable to the ID of each item in array
         var favID = favorites[i];
         // update API URL with ID
-        var queryURL = "http://api.giphy.com/v1/gifs/" + favID + "?limit=1&api_key=QeY1YZllxF0mUC9JEYs9YbhEWVqaVdVG"
+        var queryURL = "https://api.giphy.com/v1/gifs/" + favID + "?limit=1&api_key=QeY1YZllxF0mUC9JEYs9YbhEWVqaVdVG"
 
         // ajax call
         $.ajax({
