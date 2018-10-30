@@ -81,7 +81,7 @@ label {
     width: 90%;
 }
 
-/* DYNAMICALLY ADDED TO THE SCREEN */
+/* DYNAMICALLY ADDED TO HTML */
 .giphy-display div,
 .favorites div {
     display: inline-block;
@@ -90,7 +90,7 @@ label {
     border-radius: 20px;
 }
 
-/* DYNAMICALLY ADDED TO THE SCREEN */
+/* DYNAMICALLY ADDED TO HTML */
 .giphy-display div img,
 .favorites div img {
     cursor: pointer;
@@ -98,14 +98,24 @@ label {
     display: block;
 }
 
-/* DYNAMICALLY ADDED TO THE SCREEN */
+/* DYNAMICALLY ADDED TO HTML */
 .giphy-display div p,
 .favorites div p {
     display: inline;
     margin-right: 10px;
 }
 
-/* RED HEART WHEN MOVED TO FAVORITES SECTION */
+/* HEART FOR MOVING TO AND FROM FAVORITES SECTION */
+.fa-heart {
+    cursor: pointer;
+}
+
+.no-fav:hover,
+.fav:hover {
+    color: lightcoral;
+}
+
 .fav {
     color: red;
 }
+

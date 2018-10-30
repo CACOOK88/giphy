@@ -83,9 +83,16 @@ function animateToggle() {
 
 // add to favorites section
 function addToFavs() {
-    // grab the data ID and add to favorites array
-    favorites.push($(this).attr('data-id'));
-    displayFavs();
+    // check if already in favorites to reduce duplicates
+    if ( !favorites.includes($(this).attr('data-id'))) {
+        $(this).addClass('fav');
+        // grab the data ID and add to favorites array
+        favorites.push($(this).attr('data-id'));
+        // remove the heart from clicked item in gif display
+        $(this).remove();
+        // render favorite gifs
+        displayFavs();
+    }
 }
 
 // use data-id of clicked heart to make ajax call and add to html
@@ -142,6 +149,7 @@ function removeFromFav() {
     for ( let i = 0; i < favorites.length ; i++) {
         // check if the id of clicked element is in favorites array
         if ($(this).attr('data-id') === favorites[i]) {
+            $('')
             // if so, remove that index from the array
             favorites.splice(i, 1)
         }
