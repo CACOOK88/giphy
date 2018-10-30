@@ -83,13 +83,14 @@ function animateToggle() {
 
 // add to favorites section
 function addToFavs() {
+    var item = $(this).closest('.gif-card');
     // check if already in favorites to reduce duplicates
     if ( !favorites.includes($(this).attr('data-id'))) {
         $(this).addClass('fav');
         // grab the data ID and add to favorites array
         favorites.push($(this).attr('data-id'));
         // remove the heart from clicked item in gif display
-        $(this).remove();
+        item.remove();
         // render favorite gifs
         displayFavs();
     }
@@ -145,6 +146,11 @@ function displayFavs() {
 
 // when user clicks heart in favorite section
 function removeFromFav() {
+    console.log(this);
+    $(this).removeClass('fav').addClass('no-fav');
+    var thisParent = $(this).closest('.gif-card');
+    console.log(thisParent[0].lastChild);
+    $('.giphy-display').prepend($(thisParent));
     // loop through favorites array
     for ( let i = 0; i < favorites.length ; i++) {
         // check if the id of clicked element is in favorites array
