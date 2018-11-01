@@ -19,7 +19,7 @@ button,
 .container {
     margin: 0 auto;
     max-width: 1200px;
-    color: silver;
+    color: #eee;
 }
 /* TITLE STYLE */
 .header {
@@ -35,9 +35,10 @@ h2 {
 button {
     margin: 5px;
     padding: 1%;
+    border-color: black;
     border-radius: 100vh;
     background-color: #2f4353;
-    background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 90%);
+    background-image: linear-gradient(315deg, #2013dd 0%, #1a194e 90%);
 }
 
 hr {
@@ -66,9 +67,10 @@ label {
 #add-giphy, 
 #clear {
     margin: 5px;
+    border-color: black;
     border-radius: 100vh;
     background-color: #2f4353;
-    background-image: linear-gradient(315deg, #d2ccc4 0%, #2f4353 90%);
+    background-image: linear-gradient(315deg, #2013dd 0%, #1a194e 90%);
 }
 
 
