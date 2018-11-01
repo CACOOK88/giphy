@@ -17,7 +17,9 @@ button,
 }
 /* SETTING MAX WIDTH */
 .container {
+
     margin: 0 auto;
+    margin-top: 20px;
     max-width: 1200px;
     color: #eee;
 }
